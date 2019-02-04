@@ -3,7 +3,7 @@
         <div class="hmcts-header__logo">
             <a class="hmcts-header__link" href="/" [attr.aria-label]="serviceName.name" >{{serviceName.name}}</a>
         </div>
-        <div class="hmcts-header__content">
+        <div class="hmcts-header__content" *ngIf="!hideProfile">
             <nav class="hmcts-header__navigation" attr.aria-label="{{navigation.label}}">
                 <ul class="hmcts-header__navigation-list" >
 

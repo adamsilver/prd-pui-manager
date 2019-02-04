@@ -3,19 +3,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { UsersComponent, ProfileComponent } from './containers';
 import { UserformComponent } from './containers/userform/userform.component';
+import { AuthorisedMasterTemplateComponent } from 'src/app/containers';
 
 export const ROUTES: Routes = [
   {
     path: 'users',
-    component: UsersComponent
-  },
-  {
-    path: 'userform',
-    component: UserformComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
+    component: AuthorisedMasterTemplateComponent,
+    children: [
+      {
+        path: '',
+        component: UsersComponent
+      },
+      {
+        path: 'userform',
+        component: UserformComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      }
+    ]
   }
 ];
 

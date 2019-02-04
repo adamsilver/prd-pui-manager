@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
     templateUrl: './hmcts-global-header.component.html'
 })
 export class HmctsGlobalHeaderComponent {
+    @Input() hideProfile: boolean;
     @Input() serviceName = {
         name: 'Service name',
         url: '#'

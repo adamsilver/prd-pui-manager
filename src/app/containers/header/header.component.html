@@ -1,6 +1,6 @@
 <header>
     <!--TODO move the json file to TS file-->
-    <app-hmcts-global-header [serviceName]="serviceName" [navigation]="navigations" ></app-hmcts-global-header>
+    <app-hmcts-global-header [serviceName]="serviceName" [navigation]="navigations" [hideProfile]="hideMenu"></app-hmcts-global-header>
 
-    <app-hmcts-primary-navigation [label]="" [items]="navItems"></app-hmcts-primary-navigation>
+    <app-hmcts-primary-navigation [label]="" [items]="navItems" *ngIf="!hideMenu"></app-hmcts-primary-navigation>
 </header>

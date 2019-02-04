@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+    @Input() hideMenu: boolean;
 
     logoutLink: string;
     navItems: Array<{}>;
@@ -40,7 +42,7 @@ export class HeaderComponent implements OnInit {
             label: 'Account navigation',
             items: [{
                 text: 'Profile',
-                href: '/profile'
+                href: '/users/profile'
             }, {
                 text: 'Sign out',
                 href: this.logoutLink

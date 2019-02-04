@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { OrganisationComponent } from 'src/organisation/containers';
 import { LoginModule } from 'src/login/login.module';
 import { FeeAccountsModule } from 'src/fee-accounts/fee-accounts.module';
+import { AuthorisedMasterTemplateComponent, NonAuthorisedMasterTemplateComponent } from './containers/';
 
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/login' },
@@ -56,6 +57,10 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
     }),
     LoginModule,
     FeeAccountsModule
+  ],
+  exports: [
+    AuthorisedMasterTemplateComponent,
+    NonAuthorisedMasterTemplateComponent
   ],
   providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
   bootstrap: [AppComponent]

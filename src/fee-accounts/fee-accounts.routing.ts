@@ -2,10 +2,12 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {FeeAccountsComponent, TransactionsComponent, SingleFeeAccountComponent} from './containers';
+import { AuthorisedMasterTemplateComponent } from 'src/app/containers';
 
 export const ROUTES: Routes = [
   {
     path: 'fee-accounts',
+    component: AuthorisedMasterTemplateComponent,
     children: [
       {
         path: '',
